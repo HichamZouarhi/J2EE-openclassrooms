@@ -9,13 +9,19 @@
     <body>
         <p>Ceci est une page générée depuis une JSP.</p>
         <p>
-            <% 
-            Client client = (Client) request.getAttribute("client");
-            /* out.println( attribut ); */
-
-            out.println(client.getName());
-            out.println(client.getClient_ID());
-            %>
+        <%-- <jsp:useBean id="client" class="model.Client" scope="session">
+        	<jsp:setProperty name="client" property="*"/>
+        </jsp:useBean> --%>
+        
+		<%-- <% out.println(client.toString()); %> --%>
+		
+		<%	Client client = (Client) request.getAttribute( "client" );
+			out.println(client.toString());
+		%>
+		
+		<%-- <jsp:getProperty name="client" property="Client_ID" />
+		<br>
+		<jsp:getProperty name="client" property="Name" /> --%>
         </p>
     </body>
 </html>

@@ -20,4 +20,8 @@ public class Client {
 		Name = name;
 	}
 	
+	@Override
+	public String toString() {
+		return "Client [Client_ID=" + Client_ID + ", Name=" + Name + "]";
+	}
 }
