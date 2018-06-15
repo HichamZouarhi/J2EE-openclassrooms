@@ -29,15 +29,17 @@ public class CreationClient extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		System.out.println((String) request.getParameter("nomClient"));
 		Client client = new Client();
-		client.setNom((String) request.getAttribute("nomClient"));
-		client.setPrenom((String) request.getAttribute("prenomClient"));
-		client.setAdresse_livraison((String) request.getAttribute("adresseClient"));
-		client.setNum_tel((String) request.getAttribute("telephoneClient"));
-		client.setAdresse_email((String) request.getAttribute("emailClient"));
+		client.setNom((String) request.getParameter("nomClient"));
+		client.setPrenom((String) request.getParameter("prenomClient"));
+		client.setAdresse_livraison((String) request.getParameter("adresseClient"));
+		client.setNum_tel((String) request.getParameter("telephoneClient"));
+		client.setAdresse_email((String) request.getParameter("emailClient"));
 		
 		request.setAttribute( "client", client );
-
+		System.out.println(client.toString());
     	this.getServletContext().getRequestDispatcher( "/afficherClient.jsp" ).forward( request, response );
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
