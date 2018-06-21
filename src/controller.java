@@ -28,12 +28,11 @@ public class controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-    	String clientID = request.getParameter( "id" );
-    	String name = request.getParameter( "name" );
+
+    	String name = request.getParameter( "nom" );
     	
     	Client client = new Client();
-    	client.setClient_ID(clientID);
-    	client.setName(name);
+    	client.setNom(name);
     	
     	request.setAttribute( "client", client );
 

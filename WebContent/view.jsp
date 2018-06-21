@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="model.Client"%>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -15,10 +16,10 @@
         
 		<%-- <% out.println(client.toString()); %> --%>
 		
-		<%	Client client = (Client) request.getAttribute( "client" );
+		<%--	Client client = (Client) request.getAttribute( "client" );
 			out.println(client.toString());
-		%>
-		
+		--%>
+		<c:out value="test" />
 		<%-- <jsp:getProperty name="client" property="Client_ID" />
 		<br>
 		<jsp:getProperty name="client" property="Name" /> --%>
