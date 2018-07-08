@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import model.Client;
 
 public class Commande {
 	private Date date;
@@ -9,6 +10,7 @@ public class Commande {
 	private String status_paiement;
 	private String mode_livraison;
 	private String status_livraison;
+	private Client client;
 	
 	public Date getDate() {
 		return date;
@@ -51,6 +53,12 @@ public class Commande {
 		return "Commande [date=" + date + ", montant=" + montant + ", mode_paiment=" + mode_paiement
 				+ ", status_paiment=" + status_paiement + ", mode_livraison=" + mode_livraison + ", status_livraison="
 				+ status_livraison + "]";
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	
 	
